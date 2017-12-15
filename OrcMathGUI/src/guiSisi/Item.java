@@ -1,23 +1,24 @@
 package guiSisi;
 
-import java.awt.Color;
 import java.awt.Graphics2D;
 
-import guiTeacher.components.Component;
+import guiTeacher.components.AnimatedComponent;
 
-public class Item extends Component {
+public class Item extends AnimatedComponent {
 
 	public Item() {
 		
-		super(40, 40, 100, 100);
+		super(31, 27, 207, 229);
+		addSequence("resources/spritestrip.png", 75, 31, 27, 207, 229, 6);
+		Thread animation = new Thread(this);
+		animation.start();
 		
 	}
 
 	@Override
 	public void update(Graphics2D g) {
 
-		g.setColor(Color.BLACK);
-		g.drawRect(0, 0, getWidth(), getHeight());
+		super.update(g);
 
 	}
 
