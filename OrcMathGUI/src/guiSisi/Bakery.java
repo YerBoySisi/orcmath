@@ -1,27 +1,127 @@
 package guiSisi;
 
-import java.awt.Color;
+
 import java.util.ArrayList;
+import java.util.Scanner;
+
 
 public class Bakery {
 	
 	private ArrayList<Bread> breads;
+	private static Scanner in = new Scanner(System.in);
+	private static Bakery bakery = new Bakery();
 	
 	public static void main(String[] args) {
 		
-		Bakery bakery = new Bakery();
+		String input = prompt();
 		
-		System.out.println(bakery.getCSVContent());
+		if(input.equals("bake")) {
+			bakery.bakeBread();
+		} else if(input.equals("save")) {
+			
+		} else {
+			System.out.println("Invalid input.");
+			input = prompt();
+		}
 		
 	}
-	
+
 	public Bakery() {
 		
 		breads = new ArrayList<Bread>();
 		
-		breads.add(new Bread("White", Color.WHITE, 300, 0, 17, 30));
-		breads.add(new Bread("Burnt", Color.BLACK, 217, 1, 20, 7));
-		breads.add(new Bread("Bleu", Color.BLUE, 250, 20, 7, 13));
+	}
+	
+	public static String prompt() {
+		
+		System.out.println("Type 'bake' to bake a new bread, type 'save' to save your bakery.");
+		String input = in.nextLine();
+		
+		return input;
+		
+	}
+	
+	public void bakeBread() {
+		
+		int count = 0;
+		
+		Bread brd = new Bread(null, null, 0, 0, 0, 0);
+		
+		while(count < 6) {
+			
+			if(count == 0) {
+				System.out.println("Type:");
+			} else if(count == 1) {
+				System.out.println("Color:");
+			} else if(count == 2) {
+				System.out.println("Calories:");
+			} else if(count == 3) {
+				System.out.println("Grams of Fat:");
+			} else if(count == 4) {
+				System.out.println("Grams of Sodium:");
+			} else if(count == 5) {
+				System.out.println("Grams of Carbohydrates:");
+			}
+			
+			String input= in.nextLine();
+			
+			if(count == 0) {
+				brd.setType(input);
+			} else if(count == 1) {
+				brd.setColor(input);
+			} else if(count == 2) {
+				
+				try {
+					brd.setCalories(Integer.parseInt(input));
+				} catch(NumberFormatException nfe) {
+					System.out.println("Invalid input. Enter a number");
+					input = in.nextLine();
+					count--;
+				}
+				
+			} else if(count == 3) {
+				
+				try {
+					brd.setFat(Integer.parseInt(input));
+				} catch(NumberFormatException nfe) {
+					System.out.println("Invalid input. Enter a number");
+					input = in.nextLine();
+					count--;
+				}
+				
+			} else if(count == 4) {
+				
+				try {
+					brd.setSodium(Integer.parseInt(input));
+				} catch(NumberFormatException nfe) {
+					System.out.println("Invalid input. Enter a number");
+					input = in.nextLine();
+					count--;
+				}
+				
+			} else if(count == 5) {
+				
+				try {
+					brd.setCarbs(Integer.parseInt(input));
+				} catch(NumberFormatException nfe) {
+					System.out.println("Invalid input. Enter a number");
+					input = in.nextLine();
+					count--;
+				}
+				
+			}
+			
+			count++;
+			
+		}
+		
+		breads.add(brd);
+		
+	}
+	
+	public void displayBakery() {
+		
+		System.out.println(bakery.getCSVContent());
 		
 	}
 	

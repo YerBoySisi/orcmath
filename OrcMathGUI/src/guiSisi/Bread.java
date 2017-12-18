@@ -1,20 +1,20 @@
 package guiSisi;
 
-import java.awt.Color;
-import java.awt.Graphics2D;
 
+import java.awt.Graphics2D;
 import guiTeacher.components.Component;
+
 
 public class Bread extends Component {
 	
 	String type;
-	Color color;
+	String color;
 	int calories;
 	int fat;
 	int sodium;
 	int carbs;
 	
-	public Bread(String type, Color color, int calories, int fat, int sodium, int carbs) {
+	public Bread(String type, String color, int calories, int fat, int sodium, int carbs) {
 		
 		super(0, 0, 30, 30);
 		
@@ -29,7 +29,7 @@ public class Bread extends Component {
 	
 	public String toString() {
 		
-		return type + ", " + color + ", " + calories + ", " + fat + ", " + sodium + ", " + carbs;
+		return type + ", " + color + " color, " + calories + " calories, " + fat + "g of fat, " + sodium + "g of sodium, " + carbs + "g of carbohydrates";
 		
 	}
 
@@ -38,6 +38,54 @@ public class Bread extends Component {
 
 		
 		
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public int getCalories() {
+		return calories;
+	}
+
+	public void setCalories(int calories) {
+		this.calories = calories;
+	}
+
+	public int getFat() {
+		return fat;
+	}
+
+	public void setFat(int fat) {
+		this.fat = fat;
+	}
+
+	public int getSodium() {
+		return sodium;
+	}
+
+	public void setSodium(int sodium) {
+		this.sodium = sodium;
+	}
+
+	public int getCarbs() {
+		return carbs;
+	}
+
+	public void setCarbs(int carbs) {
+		this.carbs = carbs;
 	}
 
 }
