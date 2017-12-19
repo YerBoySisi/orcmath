@@ -13,14 +13,9 @@ public class Bakery {
 	
 	public static void main(String[] args) {
 		
-		String input = prompt();
-		
-		if(input.equals("bake")) {
-			bakery.bakeBread();
-		} else if(input.equals("save")) {
-			
-		} else {
-			System.out.println("Invalid input.");
+		while(true) {
+			String input = prompt();
+			interpretInput(input);
 			input = prompt();
 		}
 		
@@ -38,6 +33,19 @@ public class Bakery {
 		String input = in.nextLine();
 		
 		return input;
+		
+	}
+	
+	public static void interpretInput(String input) {
+		
+		if(input.equals("bake")) {
+			bakery.bakeBread();
+			bakery.displayBakery();
+		} else if(input.equals("save")) {
+			bakery.save();
+		} else {
+			System.out.println("Invalid input.");
+		}
 		
 	}
 	
@@ -134,6 +142,12 @@ public class Bakery {
 		}
 		
 		return data;
+		
+	}
+
+	private void save() {
+
+		
 		
 	}
 
