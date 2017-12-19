@@ -29,7 +29,7 @@ public class Bread extends Component {
 	
 	public String toString() {
 		
-		return type + ", " + color + " color, " + calories + " calories, " + fat + "g of fat, " + sodium + "g of sodium, " + carbs + "g of carbohydrates";
+		return type + "," + color + " color," + calories + " calories," + fat + "g of fat," + sodium + "g of sodium," + carbs + "g of carbohydrates";
 		
 	}
 

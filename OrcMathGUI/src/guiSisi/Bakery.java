@@ -1,6 +1,8 @@
 package guiSisi;
 
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -147,8 +149,22 @@ public class Bakery {
 	}
 
 	private void save() {
-
 		
+		try {
+			
+			FileWriter writer = new FileWriter("resources/BakeryMenu.txt");
+			
+			for(Bread bread: breads) {
+				writer.write(bread.toString() + "|");
+			}
+			
+			writer.close();
+			
+			System.out.println("File successfully saved.");
+			
+		} catch(IOException io) {
+			System.out.println("The directory you wish to save the file in does not exist. Save failed.");
+		}
 		
 	}
 
