@@ -1,10 +1,13 @@
 package guiSisi;
 
+import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Scanner;
+
 
 public class TextFileWriter {
 
@@ -24,9 +27,10 @@ public class TextFileWriter {
 	
 	public void createFile() {
 		
-		String s = in.nextLine();
+		ArrayList<String> s = new ArrayList<String>();
+		s.add(in.nextLine());
 		
-		Path file = Paths.get("savefile.txt");
+		Path file = Paths.get("resources/savefile.txt");
 		Files.write(file, s, Charset.forName("UTF-8"));
 		
 	}

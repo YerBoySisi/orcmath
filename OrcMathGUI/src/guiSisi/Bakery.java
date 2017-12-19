@@ -13,10 +13,11 @@ public class Bakery {
 	
 	public static void main(String[] args) {
 		
+		String input;
+		
 		while(true) {
-			String input = prompt();
-			interpretInput(input);
 			input = prompt();
+			interpretInput(input);
 		}
 		
 	}
