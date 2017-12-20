@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
+import guiSisi.Item;
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
@@ -126,6 +127,7 @@ public class Sampler extends GUIApplication implements FileRequester{
 				}
 			}); 
 			viewObjects.add(cb);
+			viewObjects.add(new Item());
 			
 			
 				

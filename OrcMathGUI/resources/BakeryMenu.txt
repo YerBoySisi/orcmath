@@ -1,0 +1,1 @@
+a,a color,0 calories,0g of fat,0g of sodium,0g of carbohydrates|b,b color,1 calories,1g of fat,1g of sodium,1g of carbohydrates|c,c color,2 calories,2g of fat,2g of sodium,2g of carbohydrates|
