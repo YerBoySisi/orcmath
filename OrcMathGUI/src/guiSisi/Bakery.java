@@ -148,14 +148,14 @@ public class Bakery {
 		
 	}
 
-	private void save() {
+	public void save() {
 		
 		try {
 			
-			FileWriter writer = new FileWriter("resources/BakeryMenu.txt");
+			FileWriter writer = new FileWriter("resources/BakeryMenu.csv");
 			
 			for(Bread bread: breads) {
-				writer.write(bread.toString() + "|");
+				writer.write(bread.toString() + "\n");
 			}
 			
 			writer.close();
